@@ -9,6 +9,7 @@ import {
   TextInput,
 } from "react-native";
 import React from "react";
+import {Link, router} from "expo-router";
 
 export default function index() {
   return (
@@ -25,11 +26,11 @@ export default function index() {
           textAlign: "center",
         }}
         placeholder="Type here.."
-        onChangeText={(text) => console.log(text)}
+        onChangeText={(text) => console.log("Hello")}
       />
 
       <Button
-        onPress={() => console.log("hello")}
+        onPress={() => router.push('/profile')}
         title="Learn More"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
@@ -43,6 +44,11 @@ export default function index() {
           alignSelf: "center",
         }}
       />
+
+        <Link style={{
+            textAlign: 'center',
+            fontSize: 20,
+        }} href="/profile">View details</Link>
     </View>
   );
 }
